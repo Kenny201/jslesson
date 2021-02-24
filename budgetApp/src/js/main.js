@@ -1,14 +1,10 @@
-let btn = document.getElementById('start');
+let startBtn = document.getElementById('start');
 let value = document.querySelectorAll('div[class$="-value"]');
 let expenses = document.querySelectorAll('.expenses-item');
-
 let dataBtn = document.querySelectorAll(".data > button");
-
 let btnExpTag = document.getElementsByTagName("button")[0];
 let btnOptExpTag = document.getElementsByTagName("button")[1];
 let btnCntTag = document.getElementsByTagName("button")[2];
-
-
 let optExpItem = document.querySelectorAll(".optionalexpenses-item");
 let chooseInc = document.querySelector(".choose-income");
 let savings =  document.querySelector("#savings");
@@ -19,18 +15,20 @@ let monthValue = document.querySelector(".month-value");
 let dayValue = document.querySelector(".day-value");
 
 let money, time;
-
-function start() {
-    money = +prompt ("Ваш бюджет на месяц?", "");
+startBtn.addEventListener('click',function(){
     time = prompt ("Введите дату в формате YYYY-MM-DD", "");
-
+    money = +prompt ("Ваш бюджет на месяц?", "");
     while (isNaN(money) || money == "" || money == null) {
         money = +prompt ("Ваш бюджет на месяц?", ""); 
     }
-
-}
-start();
-    
+    value[0].textContent = money.toFixed();
+    appData.budget = money;
+    appData.timeData = time;
+    yearValue.value = new Date(Date.parse(time)).getFullYear();
+    monthValue.value = new Date(Date.parse(time)).getMonth()  + 1 
+    dayValue.value= new Date(Date.parse(time)).getDay();
+    console.log(yearValue.value);
+})
 let appData = {
     budget: money,
     timeData: time,
@@ -106,7 +104,3 @@ let appData = {
 
 
 };
-
-for (let key in appData) {
-    console.log("Наша программа включает в себя данные: " + key + " - " + appData[key]);
-}
