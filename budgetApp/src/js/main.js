@@ -44,9 +44,7 @@ btnExpTag.addEventListener('click',function(){
             b = expenses[++i].value;
     
         if ( typeof(a)==='string' && typeof(a) != null && typeof(b) != null && a != "" && b != "" && a.length < 50) {
-    
             console.log ("done");
-    
             appData.expenses[a] = b;
             sum += +b;
             
@@ -67,7 +65,6 @@ btnOptExpTag.addEventListener('click', function(){
         valueClass[4].textContent = sum;
 
     }
-    
 });
 btnCntTag.addEventListener('click', function(){
     if(appData.budget != undefined){
@@ -93,8 +90,6 @@ chooseInc.addEventListener('input', function(){
     appData.income.sort();
     valueClass[5].textContent = appData.income;
 }); 
-console.log(appData.savings);
-
 chooseSum.addEventListener('input', function(){
     if (savings.checked){
         let sum = +chooseSum.value;
