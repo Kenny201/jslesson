@@ -62,12 +62,20 @@
             font-size: 22px;
         &_logoWrap img
             width: 25px;
+        &_call
+            display: none;
         &_tel
             font-size: 21px;
+            position: relative
+            top: -2px;
+    
         &_callBtn
             width: 100%;
             padding: 10px 15px;
             font-size: 13px;
+        &_groupBtn
+            flex-direction: column
+            align-items: center
     .promo
         &_header
             font-size: 40px;
@@ -130,8 +138,9 @@
             width: 50%
             height: 100vh;
             transition: 0.6s all;
-            &_ative
+            &_active
                 left: 0;
+                z-index: 9
             &_item
                 padding-right: 0
                 border: none;
@@ -142,8 +151,8 @@
             position: absolute
             display: inline-block;
             cursor: pointer;
-            top: 10px;
-            left: 10px;
+            top: 5px;
+            right: 10px;
         .line1,.line2,.line3
             width: 35px;
             height: 5px;
@@ -153,7 +162,7 @@
             
         .change .line1 
             -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-            transform: rotate(-45deg) translate(-9px, 6px) ;
+            transform: rotate(-47deg) translate(-9px, 7px) ;
         
 
         /* Fade out the second line */
@@ -164,13 +173,16 @@
         /* Rotate last line */
         .change .line3 
             -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-            transform: rotate(45deg) translate(-8px, -8px) ;
+            transform: rotate(45deg) translate(-8px, -7px) ;
         
         .subheader
             &_call
                 display: none
             &_tel
                 font-size: 15px;
+                position: relative
+                top: -2px;
+            
             &_callBtn
                 padding: 7px 11px;
                 font-size: 11px;
@@ -229,16 +241,89 @@
                         font-size: 9px;
 
 @media (max-width: 575px)
-    
+    .title
+        font-size: 17px
+        margin: 0;
+    .label
+        width: max-content
+        padding: 8px 30px;
+        font-size: 13px;
+    .subtitle
+        margin-top: 0;
+    .subheader
+        &_official
+            display: none
+        &_tel
+            position: relative
+            top: -2px;
+            font-size: 13px;
+        &_logoText
+            font-size: 15px
+        &_logoWrap img
+            width: 21px;
+        &_callBtn
+            width: max-content
+            padding: 4px 13px;
+            font-size: 10px;
+        &_groupBtn 
+            position: relative
+            left: -10px;
+       
+          
     .mobileApp
+        padding: 35px 0 45px 0;
         &_item
             height: 300px
+    .require
+        padding: 25px 0 25px 0;
+        &_block
+            margin: 25px 0;
+        &_list
+            padding-left: 35px;
+            margin-top: 0;
+            & li
+                margin-bottom: 5px;
+                font-size: 14px;
+
     .promo
+        min-height: 400px
+        &_header
+            font-size: 30px;
         &_btnWrap
-            margin: 50px auto 0 auto
+            margin: 60px auto 30px auto
             justify-content: center
             display: flex
+        &_btn
+            font-size: 16px;
+        &_descr
+            display: none;
+        &_subheader
+            font-weight: 900
+            margin-top: 20px;
+            font-size: 20px;
+    .privilage
+            margin-top: 30px;
+            &_item
+                margin-bottom: 15px;
+                &-wrap
+                    margin-bottom: 25px
+                &-Text
+                    margin-top: 15px;
+    .cityMap
+        background-size: 250% auto;
+        &_Wrap 
+            padding: 30px 0px 0px 0px;
+        &_allCityLink
+            padding: 0 0 30px 0;
+            a   
+                font-size: 16px;
     .choise
+        min-height: 435px
+        padding: 35px 0 56px 0;
+        .black
+            height: 430px;
+        &_img img
+            width: 95%;
         .title,.subtitle
             display: none
         &_desc
