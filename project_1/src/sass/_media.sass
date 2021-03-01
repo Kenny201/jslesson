@@ -138,6 +138,34 @@
                 margin: 10px 0; 
             &_link 
                 font-size: 20px;
+        .menu_btn
+            position: absolute
+            display: inline-block;
+            cursor: pointer;
+            top: 10px;
+            left: 10px;
+        .line1,.line2,.line3
+            width: 35px;
+            height: 5px;
+            background-color: #fff;
+            margin: 6px 0;
+            transition: 0.4s;
+            
+        .change .line1 
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+            transform: rotate(-45deg) translate(-9px, 6px) ;
+        
+
+        /* Fade out the second line */
+        .change .line2 
+            opacity: 0;
+        
+
+        /* Rotate last line */
+        .change .line3 
+            -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+            transform: rotate(45deg) translate(-8px, -8px) ;
+        
         .subheader
             &_call
                 display: none
@@ -201,6 +229,7 @@
                         font-size: 9px;
 
 @media (max-width: 575px)
+    
     .mobileApp
         &_item
             height: 300px
